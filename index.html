@@ -3,940 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cottesloe Anglican | St Philips</title>
-  <meta name="description" content="Cottesloe Anglican (St Philips) mockup: beach-forward design, Sunday services, ministries, team, mission, and contact information.">
+  <title>St Philips Anglican Church Cottesloe</title>
+  <meta name="description" content="Making disciples who make disciples.">
   <link rel="preconnect" href="https://fonts.cdnfonts.com">
   <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/alwyn-new">
-  <style>
-    :root {
-      --font-main: "Alwyn New", "Alwyn", "Avenir Next", "Segoe UI", sans-serif;
-      --ink: #10283b;
-      --ink-soft: #294c66;
-      --sky: #d9eef9;
-      --sea: #3f91be;
-      --sea-deep: #1f5c84;
-      --sand: #f2e3c3;
-      --sand-deep: #dfca9f;
-      --foam: #f8fcfe;
-      --sun: #f6b25f;
-      --border: rgba(16, 40, 59, 0.15);
-      --shadow: 0 18px 50px rgba(22, 53, 75, 0.16);
-      --radius: 20px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-main);
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.7), transparent 32%),
-        radial-gradient(circle at 85% 16%, rgba(209, 236, 250, 0.7), transparent 30%),
-        linear-gradient(180deg, #f8fdff 0%, #e9f6fd 34%, #f6f0de 78%, #f8f3e8 100%);
-      line-height: 1.5;
-      overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1140px, 92vw);
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(248, 252, 254, 0.88);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .topbar-inner {
-      min-height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .brand img {
-      width: clamp(170px, 22vw, 250px);
-      height: auto;
-      filter: brightness(0) saturate(100%);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      font-size: 0.95rem;
-      color: var(--ink-soft);
-    }
-
-    .nav-links a {
-      padding: 6px 0;
-      border-bottom: 2px solid transparent;
-      transition: color 180ms ease, border-color 180ms ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--sea-deep);
-      border-color: var(--sea);
-      outline: none;
-    }
-
-    .menu-btn {
-      display: none;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: #fff;
-      color: var(--sea-deep);
-      font-family: inherit;
-      font-size: 0.92rem;
-      padding: 8px 14px;
-      cursor: pointer;
-    }
-
-    .hero {
-      position: relative;
-      min-height: min(86vh, 900px);
-      padding: 72px 0 86px;
-      isolation: isolate;
-      overflow: hidden;
-    }
-
-    .hero-ribbon {
-      position: absolute;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      margin: 0;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: rgba(8, 40, 63, 0.68);
-      border: 1px solid rgba(235, 247, 254, 0.4);
-      color: #f1fbff;
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      white-space: nowrap;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(110deg, rgba(4, 32, 53, 0.66) 8%, rgba(4, 32, 53, 0.2) 55%, rgba(4, 32, 53, 0.1) 100%),
-        url("https://cdn.pixabay.com/photo/2022/10/06/11/45/cottesloe-beach-7504145_1280.jpg") center/cover no-repeat;
-      z-index: -2;
-      transform: scale(1.02);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -8% -70px;
-      height: 160px;
-      border-radius: 48% 52% 0 0 / 100% 100% 0 0;
-      background: linear-gradient(180deg, rgba(241, 250, 255, 0) 0%, #f0f9fe 78%);
-      z-index: -1;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr minmax(290px, 0.9fr);
-      gap: 28px;
-      align-items: end;
-    }
-
-    .hero-copy {
-      color: #ecf9ff;
-      max-width: 700px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(9, 44, 69, 0.55);
-      border: 1px solid rgba(235, 247, 254, 0.27);
-    }
-
-    h1,
-    h2,
-    h3 {
-      margin: 0;
-      line-height: 1.1;
-      letter-spacing: 0.015em;
-      font-weight: 700;
-    }
-
-    .hero h1 {
-      margin-top: 20px;
-      font-size: clamp(2rem, 5vw, 4.1rem);
-      max-width: 9.2ch;
-      text-wrap: balance;
-    }
-
-    .hero p {
-      margin: 18px 0 0;
-      max-width: 58ch;
-      color: rgba(241, 251, 255, 0.94);
-      font-size: clamp(1rem, 2vw, 1.15rem);
-    }
-
-    .hero-actions {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      border-radius: 999px;
-      padding: 0 20px;
-      border: 1px solid transparent;
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease, background 200ms ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--sun), #f9c26d);
-      color: #4d2f08;
-      box-shadow: 0 12px 24px rgba(250, 187, 93, 0.35);
-    }
-
-    .btn-secondary {
-      border-color: rgba(244, 251, 255, 0.5);
-      background: rgba(255, 255, 255, 0.08);
-      color: #f4fbff;
-    }
-
-    .service-panel {
-      background: rgba(248, 252, 255, 0.94);
-      border: 1px solid rgba(200, 222, 236, 0.72);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: 24px;
-      color: var(--ink);
-      animation: hero-rise 900ms ease both 260ms;
-    }
-
-    @keyframes hero-rise {
-      from {
-        opacity: 0;
-        transform: translateY(28px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .service-panel h2 {
-      font-size: 1.3rem;
-      color: var(--sea-deep);
-      margin-bottom: 12px;
-    }
-
-    .service-grid {
-      display: grid;
-      gap: 10px;
-    }
-
-    .service-row {
-      border-radius: 14px;
-      padding: 10px 12px;
-      background: rgba(207, 235, 248, 0.4);
-      display: grid;
-      gap: 2px;
-    }
-
-    .service-row strong {
-      font-size: 1rem;
-    }
-
-    .service-row span {
-      font-size: 0.9rem;
-      color: var(--ink-soft);
-    }
-
-    .section {
-      padding: 84px 0;
-    }
-
-    .section-title {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: end;
-      gap: 16px;
-      margin-bottom: 26px;
-    }
-
-    .section-title p {
-      margin: 0;
-      max-width: 58ch;
-      color: var(--ink-soft);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-    }
-
-    .card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: rgba(251, 254, 255, 0.78);
-      box-shadow: 0 14px 28px rgba(19, 53, 77, 0.08);
-      padding: 20px;
-    }
-
-    .card p {
-      margin: 10px 0 0;
-      color: var(--ink-soft);
-    }
-
-    .pill {
-      display: inline-flex;
-      padding: 6px 11px;
-      border-radius: 999px;
-      background: rgba(79, 154, 196, 0.14);
-      color: var(--sea-deep);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 700;
-      font-size: 0.72rem;
-      margin-bottom: 8px;
-    }
-
-    .vision {
-      background:
-        linear-gradient(130deg, rgba(189, 226, 246, 0.42), rgba(244, 233, 207, 0.6)),
-        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.8), transparent 30%);
-      border-top: 1px solid rgba(176, 207, 223, 0.6);
-      border-bottom: 1px solid rgba(176, 207, 223, 0.6);
-    }
-
-    .vision-layout {
-      display: grid;
-      grid-template-columns: 1.25fr minmax(260px, 0.85fr);
-      gap: 20px;
-      align-items: stretch;
-    }
-
-    .vision-values {
-      display: grid;
-      gap: 12px;
-    }
-
-    .value-item {
-      border-radius: 16px;
-      border: 1px solid rgba(52, 95, 126, 0.24);
-      background: rgba(248, 253, 255, 0.78);
-      padding: 14px 14px 12px;
-    }
-
-    .value-item strong {
-      display: block;
-      font-size: 1rem;
-      color: var(--sea-deep);
-    }
-
-    .value-item span {
-      display: block;
-      margin-top: 5px;
-      color: var(--ink-soft);
-      font-size: 0.92rem;
-    }
-
-    .ministries .card,
-    .planting .card,
-    .team .card,
-    .giving .card,
-    .contact .card {
-      background: rgba(255, 255, 255, 0.82);
-    }
-
-    .card ul {
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--ink-soft);
-    }
-
-    .card li + li {
-      margin-top: 6px;
-    }
-
-    .ministry-card {
-      min-height: 208px;
-    }
-
-    .feed-grid .card {
-      min-height: 160px;
-    }
-
-    .photo-band {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 12px;
-    }
-
-    .photo-band figure {
-      margin: 0;
-      border-radius: 18px;
-      overflow: hidden;
-      min-height: 210px;
-      position: relative;
-    }
-
-    .photo-band img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.02);
-      transition: transform 300ms ease;
-    }
-
-    .photo-band figure:hover img {
-      transform: scale(1.08);
-    }
-
-    .photo-band figcaption {
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      color: #f4fbff;
-      font-size: 0.8rem;
-      padding: 9px 10px;
-      border-radius: 10px;
-      background: rgba(4, 31, 52, 0.58);
-      letter-spacing: 0.03em;
-    }
-
-    .footer {
-      border-top: 1px solid rgba(127, 166, 190, 0.45);
-      background:
-        linear-gradient(135deg, rgba(228, 245, 253, 0.7), rgba(249, 239, 213, 0.8)),
-        #f3f8fb;
-      padding: 38px 0 46px;
-      color: var(--ink-soft);
-      font-size: 0.93rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 16px 30px;
-      align-items: start;
-    }
-
-    .footer-links {
-      display: grid;
-      gap: 6px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .footer-links a {
-      color: var(--sea-deep);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 500ms ease, transform 500ms ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .stagger > * {
-      transition-delay: var(--delay, 0ms);
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .vision-layout,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .photo-band {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .photo-band figure:first-child {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (max-width: 820px) {
-      .menu-btn {
-        display: inline-flex;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: 88px;
-        right: min(4vw, 24px);
-        width: min(260px, 88vw);
-        background: rgba(251, 255, 255, 0.98);
-        border: 1px solid var(--border);
-        box-shadow: var(--shadow);
-        border-radius: 16px;
-        padding: 14px;
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .section {
-        padding: 72px 0;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .topbar-inner {
-        min-height: 74px;
-      }
-
-      .brand img {
-        width: 170px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 56px;
-        padding-bottom: 72px;
-      }
-
-      .hero-ribbon {
-        top: 12px;
-        width: calc(100% - 24px);
-        text-align: center;
-        white-space: normal;
-        letter-spacing: 0.12em;
-        line-height: 1.35;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .service-panel {
-        padding: 18px;
-      }
-
-      .card {
-        padding: 16px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .photo-band {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 56px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .hero h1 {
-        font-size: clamp(1.8rem, 10vw, 2.4rem);
-      }
-
-      .hero p {
-        font-size: 0.96rem;
-      }
-
-      .section-title {
-        margin-bottom: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body data-page="home">
   <header class="topbar">
     <div class="container topbar-inner">
-      <a class="brand" href="#top" aria-label="Cottesloe Anglican home">
-        <img src="assets/stphilips-logo-white.webp" alt="St Philips Anglican Church Cottesloe logo">
+      <a class="brand" href="index.html" aria-label="St Philips Anglican Church Cottesloe">
+        <img src="assets/stphilips-logo-white.webp" alt="St Philips Anglican Church Cottesloe">
       </a>
       <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
       <nav class="nav-links" id="main-nav" aria-label="Primary">
-        <a href="#sundays">Sundays</a>
-        <a href="#vision">Vision</a>
-        <a href="#ministries">Ministries</a>
-        <a href="#planting">Planting</a>
-        <a href="#team">Team</a>
-        <a href="#contact">Contact</a>
+        <a href="sundays.html" data-nav="sunday">Sunday</a>
+        <a href="ministries.html" data-nav="ministries">Ministries</a>
+        <a href="planting.html" data-nav="planting">Church Planting</a>
+        <a href="team.html" data-nav="people">People</a>
+        <a href="vision.html" data-nav="vision">Our Vision</a>
+        <a href="giving.html" data-nav="giving">GIVING</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <section class="hero">
-      <p class="hero-ribbon">Ancient Faith. Local Church. ESTD 1907.</p>
+      <p class="hero-ribbon">Making disciples who make disciples</p>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow">Cottesloe Anglican, Western Australia</span>
+          <span class="eyebrow">St Philips Anglican Church Cottesloe</span>
           <h1>Making disciples who make disciples.</h1>
-          <p>St Philips is an Anglican church in Cottesloe helping people meet Jesus, be transformed by him, and live to make him known in church, in family life, and in the world.</p>
+          <p>Our Services</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#sundays">Plan Your Sunday</a>
-            <a class="btn btn-secondary" href="https://www.stphilips.net.au/get-in-touch" target="_blank" rel="noreferrer">Get In Touch</a>
+            <a class="btn btn-primary" href="sundays.html">Sunday</a>
+            <a class="btn btn-secondary" href="contact.html">Get in touch.</a>
           </div>
         </div>
         <aside class="service-panel reveal">
-          <h2>Sunday Services</h2>
+          <h2>Sundays</h2>
           <div class="service-grid">
             <div class="service-row">
-              <strong>7:30 AM</strong>
-              <span>Traditional communion service</span>
+              <strong>7.30am Traditional</strong>
+              <span>A traditional Anglican Communion Service followed by morning tea.</span>
             </div>
             <div class="service-row">
-              <strong>9:30 AM</strong>
-              <span>Contemporary service with kids and youth programs</span>
+              <strong>9.30am Contemporary</strong>
+              <span>A contemporary service celebrating Jesus through music, teaching, and fellowship with a vibrant youth and children’s church.</span>
             </div>
             <div class="service-row">
-              <strong>3rd Tuesday, 7:30 PM</strong>
-              <span>Monthly all-church prayer meeting</span>
+              <strong>Monthly Prayer Meeting</strong>
+              <span>Every third Tuesday of the month at St Philip’s, 7:30-9:00pm</span>
             </div>
             <div class="service-row">
-              <strong>Fortnightly Tuesday, 10:30 AM</strong>
-              <span>Mid-week communion</span>
+              <strong>10.30am Mid-week communion</strong>
+              <span>Fortnightly Tuesday</span>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="section" id="sundays">
+    <section class="section vision">
       <div class="container">
         <div class="section-title reveal">
-          <h2>Sunday At St Philips</h2>
-          <p>Our 9:30 service includes Kids Church (Years 4-6), Junior Church (Years 1-3), and Creche (3 years old to pre-primary), plus a youth small group. Partners in Prayer meets after church each week.</p>
-        </div>
-        <div class="cards reveal stagger">
-          <article class="card" style="grid-column: span 4; --delay: 60ms;">
-            <span class="pill">Welcome</span>
-            <h3>New Here?</h3>
-            <p>Come as you are. If you are new and want to connect, the church team would love to help you find your place.</p>
-          </article>
-          <article class="card" style="grid-column: span 4; --delay: 140ms;">
-            <span class="pill">Prayer</span>
-            <h3>Prayer Rhythms</h3>
-            <p>Monthly prayer nights include a 6:30 PM session focused on children and a wider church prayer time from 7:00 PM.</p>
-          </article>
-          <article class="card" style="grid-column: span 4; --delay: 220ms;">
-            <span class="pill">Resources</span>
-            <h3>Sermons And Podcast</h3>
-            <p>Listen to recent sermon series and access podcast links from the St Philips sermons page.</p>
-            <p><a href="https://www.stphilips.net.au/sermons" target="_blank" rel="noreferrer">Open Sermons</a></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section vision" id="vision">
-      <div class="container vision-layout">
-        <article class="card reveal">
-          <span class="pill">Vision 2029</span>
-          <h2>Where We Are Headed</h2>
-          <p>By 2029 we want to be a healthy, growing, and multiplying church with at least 700 people in Cottesloe and an active church planting movement seeing disciples made and churches planted in Perth, WA, and beyond.</p>
-          <p>St Philips describes this mission through discipleship that reaches every generation, deep biblical prayer, servant leadership, and everyday witness that extends Jesus' kingdom in homes, schools, workplaces, and neighbourhoods.</p>
-        </article>
-        <aside class="vision-values reveal">
-          <div class="value-item">
-            <strong>Gospel Word</strong>
-            <span>Deep confidence in the Bible as God's word and the heart of church life.</span>
-          </div>
-          <div class="value-item">
-            <strong>Gospel Community</strong>
-            <span>Intentional, loving fellowship where people are known and cared for.</span>
-          </div>
-          <div class="value-item">
-            <strong>Gospel Culture</strong>
-            <span>Prayerful holiness, generosity, service, and faithful witness in daily life.</span>
-          </div>
-          <div class="value-item">
-            <strong>Gospel Multiplication</strong>
-            <span>Making disciples who make disciples and planting churches that plant churches.</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section ministries" id="ministries">
-      <div class="container">
-        <div class="section-title reveal">
-          <h2>Church Life &amp; Ministries</h2>
-          <p>St Philips ministries include Alpha, Connect Groups, Men, Women, Young Adults, Kids, Youth, and pastoral prayer teams serving across the week.</p>
-        </div>
-        <div class="cards reveal stagger">
-          <article class="card ministry-card" style="grid-column: span 4; --delay: 40ms;">
-            <span class="pill">Families</span>
-            <h3>Kids Church</h3>
-            <p>Sunday discipleship environments for Year 1-6 children, with age-specific teaching and care at the 9:30 AM service.</p>
-          </article>
-          <article class="card ministry-card" style="grid-column: span 4; --delay: 90ms;">
-            <span class="pill">Teens</span>
-            <h3>Youth</h3>
-            <p>Cottesloe Youth meets Fridays, 7:00 PM to 9:00 PM, with games, snacks, talks, discussion, and prayer.</p>
-          </article>
-          <article class="card ministry-card" style="grid-column: span 4; --delay: 140ms;">
-            <span class="pill">Explore Faith</span>
-            <h3>Alpha</h3>
-            <p>Open conversations for anyone who wants to ask life's big questions and discover Christian faith.</p>
-          </article>
-          <article class="card ministry-card" style="grid-column: span 4; --delay: 190ms;">
-            <span class="pill">Midweek</span>
-            <h3>Connect Groups</h3>
-            <p>Smaller communities for Bible study, prayer, care, and mission throughout the week.</p>
-          </article>
-          <article class="card ministry-card" style="grid-column: span 4; --delay: 240ms;">
-            <span class="pill">Community</span>
-            <h3>Men, Women &amp; Young Adults</h3>
-            <p>Targeted gatherings and discipleship pathways helping people grow in Christ and in service to others.</p>
-          </article>
-          <article class="card ministry-card" style="grid-column: span 4; --delay: 290ms;">
-            <span class="pill">Care</span>
-            <h3>Partners In Prayer</h3>
-            <p>A dedicated team available after church and through the week to pray for personal and pastoral needs.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section planting" id="planting">
-      <div class="container">
-        <div class="section-title reveal">
-          <h2>Church Planting &amp; Mission</h2>
-          <p>St Philips has a long-term commitment to local and global church planting through partnerships, leadership development, and practical support.</p>
+          <h2>Our Vision</h2>
+          <p>In 5 years St Philips will be a gospel-centred, Spirit-led community in which the Spirit of Jesus is evident, both individually and corporately. We will be known for being a people that, in joyful submission to Scripture, worship God in Spirit and truth, pray without ceasing, walk in humility, and display the manifestations and fruit of the Holy Spirit, ever becoming mature in Christ. We have and continue to raise up leaders within the church enabling all of us to serve those within the body and the community outside of St Philips.</p>
         </div>
         <div class="cards reveal">
           <article class="card" style="grid-column: span 6;">
-            <span class="pill">Local Church Plant</span>
-            <h3>The Common, East Vic Park</h3>
-            <p>Planted in 2014 under Craig and Karen Hamilton and now led by James and Annabeth Parnell.</p>
+            <span class="pill">Our Mission</span>
+            <h3>Making disciples who make disciples.</h3>
           </article>
           <article class="card" style="grid-column: span 6;">
-            <span class="pill">Kenya Partnership</span>
-            <h3>Kalobeyei, Pochalla &amp; Okadi</h3>
-            <p>Support for church planting and leadership training, including St Philip's Academy with more than 250 children and eight teachers.</p>
+            <span class="pill">Our Values</span>
+            <h3>Grounded in the gospel</h3>
+            <p>we are passionate about telling the good news about Jesus from the Scriptures.</p>
           </article>
           <article class="card" style="grid-column: span 6;">
-            <span class="pill">Training</span>
-            <h3>The Incubator</h3>
-            <p>Hosted with St Luke's Shenton Park to train apprentice ministers, church planters, and lay leaders.</p>
+            <h3>Empowered by the Spirit</h3>
+            <p>prayer is not optional, it’s the air we breathe.</p>
           </article>
           <article class="card" style="grid-column: span 6;">
-            <span class="pill">Revitalisation</span>
-            <h3>St Matthew's Guildford</h3>
-            <p>St Philips has been helping St Matthew's with renewal work and a long-term pathway toward healthy replanting.</p>
+            <h3>Active on mission</h3>
+            <p>as the Father sent the Son, and the Son sent the Spirit. so now the Spirit sends us.</p>
+          </article>
+          <article class="card" style="grid-column: span 12;">
+            <h3>Growing in community</h3>
+            <p>we meet together to pray, study the Scripture and build each other up.</p>
           </article>
         </div>
       </div>
-    </section>
 
-    <section class="section team" id="team">
-      <div class="container">
-        <div class="section-title reveal">
-          <h2>Staff Team</h2>
-          <p>Pastoral and ministry leadership serving Cottesloe Anglican at St Philips.</p>
-        </div>
-        <div class="cards reveal">
-          <article class="card" style="grid-column: span 3;">
-            <h3>Chris Barnes</h3>
-            <p>Senior Minister</p>
-          </article>
-          <article class="card" style="grid-column: span 3;">
-            <h3>Grace Currie</h3>
-            <p>Associate Minister</p>
-          </article>
-          <article class="card" style="grid-column: span 3;">
-            <h3>Christina Moffat</h3>
-            <p>Youth Minister</p>
-          </article>
-          <article class="card" style="grid-column: span 3;">
-            <h3>Jonathan Wong</h3>
-            <p>Ministry Apprentice</p>
-          </article>
-          <article class="card" style="grid-column: span 3;">
-            <h3>Darren Moffat</h3>
-            <p>Operations Manager</p>
-          </article>
-          <article class="card" style="grid-column: span 3;">
-            <h3>Mandy Rogers</h3>
-            <p>Church Administrator</p>
-          </article>
-          <article class="card" style="grid-column: span 3;">
-            <h3>Shirley Erceg</h3>
-            <p>Ministry Administrator</p>
-          </article>
-          <article class="card" style="grid-column: span 3;">
-            <h3>Amy Spratt</h3>
-            <p>Bookkeeper</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section giving">
-      <div class="container">
-        <div class="section-title reveal">
-          <h2>Giving</h2>
-          <p>St Philips invites regular giving as part of discipleship and church mission. You can give electronically or by direct debit.</p>
-        </div>
-        <div class="cards reveal">
-          <article class="card" style="grid-column: span 6;">
-            <span class="pill">Electronic Transfer</span>
-            <h3>St Philip's Anglican Church Cottesloe</h3>
-            <ul>
-              <li>BSB: <strong>066-157</strong></li>
-              <li>Account Number: <strong>10230800</strong></li>
-              <li>Reference: your surname + planned giving number (if assigned)</li>
-            </ul>
-          </article>
-          <article class="card" style="grid-column: span 6;">
-            <span class="pill">Other Ways</span>
-            <h3>Debit Card &amp; Direct Debit</h3>
-            <p>Card giving and direct debit forms are available through the church giving page and office support.</p>
-            <p><a href="https://www.stphilips.net.au/giving" target="_blank" rel="noreferrer">Open Giving Details</a></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="container">
-        <div class="section-title reveal">
-          <h2>Child Safety &amp; Contact</h2>
-          <p>St Philips is committed to child safety and follows the Anglican Diocese of Perth's Safe Ministry expectations.</p>
-        </div>
-        <div class="cards reveal">
-          <article class="card" style="grid-column: span 7;">
-            <span class="pill">Safe Ministry</span>
-            <h3>Child Safety Commitment</h3>
-            <p>All children and young people should feel safe, be included, and be valued in every church activity.</p>
-            <p><a href="https://www.stphilips.net.au/child-safety" target="_blank" rel="noreferrer">Read Child Safety Information</a></p>
-          </article>
-          <article class="card" style="grid-column: span 5;">
-            <span class="pill">Visit</span>
-            <h3>Find Us In Cottesloe</h3>
-            <ul>
-              <li>Address: 85 Forrest Street, Cottesloe WA 6011</li>
-              <li>Office Hours: Mon-Thu, 9:00 AM-1:00 PM</li>
-              <li>Email: <a href="mailto:office@stphilips.com.au">office@stphilips.com.au</a></li>
-              <li>Phone: <a href="tel:+61893843480">(08) 9384 3480</a></li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="cards feed-grid reveal" style="margin-top: 16px;">
-          <article class="card" style="grid-column: span 4;">
-            <span class="pill">Watch</span>
-            <h3>Livestream Archive</h3>
-            <p>Browse past livestream services from St Philips YouTube.</p>
-            <p><a href="https://www.youtube.com/@StPhilipsCottesloe" target="_blank" rel="noreferrer">Open YouTube</a></p>
-          </article>
-          <article class="card" style="grid-column: span 4;">
-            <span class="pill">Listen</span>
-            <h3>Podcast</h3>
-            <p>Subscribe through Apple Podcasts for weekly sermon audio.</p>
-            <p><a href="https://podcasts.apple.com/au/podcast/st-philips-anglican-church-cottesloe/id1550943796" target="_blank" rel="noreferrer">Open Podcast</a></p>
-          </article>
-          <article class="card" style="grid-column: span 4;">
-            <span class="pill">Follow</span>
-            <h3>Instagram</h3>
-            <p>Keep up with church life, events, and weekly updates.</p>
-            <p><a href="https://www.instagram.com/stphilipschurchcottesloe/" target="_blank" rel="noreferrer">Open Instagram</a></p>
-          </article>
-        </div>
-
-        <div class="photo-band reveal">
-          <figure>
-            <img src="https://images.unsplash.com/photo-1519952716945-5c4e79201ebb?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Aerial view of Cottesloe coastline">
-            <figcaption>Cottesloe Coastline</figcaption>
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Ocean water under open sky">
-            <figcaption>Indian Ocean Light</figcaption>
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1468413253725-0d5181091126?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="People walking along beach at sunset">
-            <figcaption>Life In Community</figcaption>
-          </figure>
-        </div>
+      <div class="container photo-band reveal">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1606453338613-bcf41ddb9d50?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Sunday">
+          <figcaption>Sunday</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1621913279020-c318f52e30eb?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Our Vision">
+          <figcaption>Our Vision</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1693022038331-f6915d19a344?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Ministries">
+          <figcaption>Ministries</figcaption>
+        </figure>
       </div>
     </section>
   </main>
@@ -944,68 +116,25 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <strong>Cottesloe Anglican</strong><br>
-        St Philips Church, 85 Forrest Street, Cottesloe WA 6011
-        <p style="margin: 10px 0 0;">Mockup content sourced from public pages on St Philips Anglican Church Cottesloe.</p>
+        <strong>Contact</strong><br>
+        240 Marmion Street,<br>
+        Cottesloe, WA, 6011,<br>
+        Australia
       </div>
       <div>
-        <strong>Source Links</strong>
+        <strong>Contact</strong>
         <ul class="footer-links">
-          <li><a href="https://www.stphilips.net.au/" target="_blank" rel="noreferrer">stphilips.net.au</a></li>
-          <li><a href="https://www.stphilips.net.au/sunday-services" target="_blank" rel="noreferrer">Sunday Services</a></li>
-          <li><a href="https://www.stphilips.net.au/vision-mission-and-values" target="_blank" rel="noreferrer">Vision, Mission and Values</a></li>
-          <li><a href="https://www.stphilips.net.au/church-planting" target="_blank" rel="noreferrer">Church Planting</a></li>
-          <li><a href="https://www.stphilips.net.au/ministries" target="_blank" rel="noreferrer">Ministries</a></li>
-          <li><a href="https://www.stphilips.net.au/team" target="_blank" rel="noreferrer">Staff Team</a></li>
-          <li><a href="https://www.stphilips.net.au/get-in-touch" target="_blank" rel="noreferrer">Contact Details</a></li>
-          <li><a href="https://www.stphilips.net.au/giving" target="_blank" rel="noreferrer">Giving</a></li>
-          <li><a href="https://www.stphilips.net.au/child-safety" target="_blank" rel="noreferrer">Child Safety</a></li>
-        </ul>
-      </div>
-      <div style="grid-column: 1 / -1;">
-        <strong>Free-Stock Image Credits</strong>
-        <ul class="footer-links">
-          <li><a href="https://pixabay.com/photos/cottesloe-beach-perth-wa-australia-7504145/" target="_blank" rel="noreferrer">Cottesloe beach hero image (Pixabay, free license)</a></li>
-          <li><a href="https://unsplash.com/photos/aerial-photo-of-seashore-fniN3gHwnEI" target="_blank" rel="noreferrer">Aerial coastline photo (Unsplash)</a></li>
-          <li><a href="https://unsplash.com/photos/body-of-water-under-white-clouds-during-day-U5rMrSI7Pn4" target="_blank" rel="noreferrer">Ocean light photo (Unsplash)</a></li>
-          <li><a href="https://unsplash.com/photos/man-and-woman-in-white-shirt-and-black-shorts-standing-on-beach-shoreline-during-day-q8wFPwY4IAo" target="_blank" rel="noreferrer">Beach community photo (Unsplash)</a></li>
-          <li><a href="https://unsplash.com/photos/brown-and-white-concrete-building-near-green-trees-under-blue-sky-during-day-EO51Lw9HqMk" target="_blank" rel="noreferrer">Additional church architecture image source (Unsplash)</a></li>
+          <li><a href="tel:+61893851042">+61 8 9385 1042</a></li>
+          <li><a href="mailto:office@stphilips.net.au">office@stphilips.net.au</a></li>
+          <li>Mon 8:30am - 3:30pm</li>
+          <li>Tue 8:30am - 3:30pm</li>
+          <li>Wed 8:30am - 3:30pm</li>
+          <li>Thu 8:30am - 3:30pm</li>
         </ul>
       </div>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var menuBtn = document.getElementById("menu-btn");
-      var nav = document.getElementById("main-nav");
-
-      if (menuBtn && nav) {
-        menuBtn.addEventListener("click", function () {
-          var open = nav.classList.toggle("open");
-          menuBtn.setAttribute("aria-expanded", String(open));
-        });
-      }
-
-      var revealElements = document.querySelectorAll(".reveal");
-      revealElements.forEach(function (el, index) {
-        el.style.setProperty("--delay", String(60 + (index % 6) * 70) + "ms");
-      });
-
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) {
-            return;
-          }
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        });
-      }, { threshold: 0.22 });
-
-      revealElements.forEach(function (el) {
-        observer.observe(el);
-      });
-    })();
-  </script>
+  <script src="assets/site.js"></script>
 </body>
 </html>
