@@ -1,0 +1,12 @@
+{
+  "name": "alpha-landing-page",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static Alpha landing page",
+  "scripts": {
+    "start": "serve -s . -l ${PORT:-3000}"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
